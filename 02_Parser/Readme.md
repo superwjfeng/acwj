@@ -55,7 +55,7 @@ they are produced by rules in the grammar. However, T_INTLIT is a *terminal*
 symbol as it is not defined by any rule. Instead, it is an already-recognised
 token in the language. Similarly, the four maths operator tokens are
 terminal symbols.
- 
+
 ## Recursive Descent Parsing
 
 Given that the grammar for our language is recursive, it makes sense for
@@ -434,7 +434,7 @@ int interpretAST(struct ASTnode *n) {
   }
 }
 ```
-   
+
 Again, the default statement in the switch statement fires when we can't 
 interpret the AST node type. It's going to form part of the
 sematic checking in our parser.

@@ -31,22 +31,19 @@ C语言只比汇编语言高出一步（对于C语言的某些子集来说，而
 ![](Figs/parsing_steps.png)
 
  + 做[词法分析](https://en.wikipedia.org/wiki/Lexical_analysis)来得到词素。在某些语言中，`=` 是和 `==` 不同的，所以不能只是读取一个 `=`。我们把这些词素也称为 tokens。
-to recognise the lexicalIn several languages, `=` is different
-to `==`, so you can't just read a single `=`. We call these lexical
-elements *tokens*.
  + [解析输入](https://en.wikipedia.org/wiki/Parsing)，即识别输入的语法和结构元素，并确保它们符合语言的*语法*。例如，你的语言可能有这样的决策结构：
 
-```
-      if (x < 23) {
-        print("x is smaller than 23\n");
-      }
+```C
+if (x < 23) {
+	print("x is smaller than 23\n");
+}
 ```
 
-> but in another language you might write:
+> 但是在其他语言里可以写成：
 
-```
-      if (x < 23):
-        print("x is smaller than 23\n")
+```C
+if (x < 23):
+	print("x is smaller than 23\n")
 ```
 
 > This is also the place where the compiler can detect syntax errors, like if
@@ -55,13 +52,11 @@ the semicolon was missing on the end of the first *print* statement.
  + 对输入进行[语义分析](https://en.wikipedia.org/wiki/Semantic_analysis_(compilers))，即理解输入的含义。这实际上与识别语法和结构不同。例如，在英语中，一个句子可能具有 `<主语> <动词> <形容词> <宾语>` 的形式。以下两个句子具有相同的结构，但完全不同的含义：
 
 ```
-          David ate lovely bananas.
-          Jennifer hates green tomatoes.
+David ate lovely bananas.
+Jennifer hates green tomatoes.
 ```
 
- + [Translate](https://en.wikipedia.org/wiki/Code_generation_(compiler))
-   the meaning of the input into a different language. Here we
-   convert the input, parts at a time, into a lower-level language.
+ + [翻译](https://en.wikipedia.org/wiki/Code_generation_(compiler))：将输入的意思转换成另一种语言。在这里，我们逐部分将输入转换为一种更低级别的语言。
 
 ## Resources
 
